@@ -27,7 +27,11 @@ require __DIR__ . '/auth.php';
 
 // ! Route untuk autentikasi user ber-usertype user (user route)
 Route::middleware(['auth', 'userMiddleware', 'verified'])->group(function () {
-    Route::get('dashboard', [UserController::class, "index"])->name("dashboard");
+    Route::get('home', [UserController::class, "index"])->name("user.home");
+
+    Route::get('product', [ProductController::class, 'userIndex'])->name('user.product.index');
+
+    Route::get('product/{id}', [ProductController::class, 'show'])->name('user.product.show');
 });
 
 // ! Route untuk autentikasi user ber-usertype admin (admin route)

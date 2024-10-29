@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    // ! mengarahkan ke view dashboard lewat method index()
+    // ! mengarahkan ke view userHome lewat method index()
     public function index()
     {
-        return view('dashboard');
+        return view('user.userHome');
     }
 }

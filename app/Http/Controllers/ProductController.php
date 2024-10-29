@@ -28,6 +28,14 @@ class ProductController extends Controller
         return view('user.product.index', ['products' => $data]);
     }
 
+    // ! show() show product or return product data by id
+
+    public function show($id)
+    {
+        $data = Product::findOrFail($id);
+        return view('user.product.show', ['product' => $data]);
+    }
+
     // ! create() create new product (form input)
     // ! create() membuat product baru (form input)
     public function create()

@@ -6,7 +6,7 @@
                 <!--  Logo -->
                 <div class="shrink-0 flex items-center">
                     {{-- <a href="{{ route('dashboard') }}"> --}}
-                    <a href="{{ Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('dashboard') }}">
+                    <a href="{{ Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('user.home') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
@@ -14,8 +14,13 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"> --}}
-                    <x-nav-link :href="Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('dashboard')" :active="Auth::user()->usertype == 'admin' ? request()->routeIs('admin.dashboard') : request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('user.home')" :active="Auth::user()->usertype == 'admin' ? request()->routeIs('admin.dashboard') : request()->routeIs('user.home')">
+                        
+                        @if (Auth::user()->usertype == 'admin')
+                            {{ __('Dashboard') }}
+                        @else
+                            {{ __('Home') }}
+                        @endif
                     </x-nav-link>
 
                     {{-- ! Admin Links --}}
@@ -35,6 +40,9 @@
                     @if (Auth::user()->usertype == 'user')
 
                     {{-- * put your user links --}}
+                    <x-nav-link :href="route('user.product.index')" :active="request()->routeIs('user.product.index')">
+                        {{ __('Produk') }}
+                    </x-nav-link>
 
                     @endif
 
@@ -93,8 +101,12 @@
             {{-- <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link> --}}
-            <x-responsive-nav-link :href="Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('dashboard')" :active="Auth::user()->usertype == 'admin' ? request()->routeIs('admin.dashboard') : request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('user.home')" :active="Auth::user()->usertype == 'admin' ? request()->routeIs('admin.dashboard') : request()->routeIs('user.home')">
+                @if (Auth::user()->usertype == 'admin')
                 {{ __('Dashboard') }}
+                @else
+                    {{ __('Home') }}
+                @endif
             </x-responsive-nav-link>
 
                     {{-- ! Admin Links --}}
@@ -112,6 +124,9 @@
                     @if (Auth::user()->usertype == 'user')
 
                     {{-- * put your user links --}}
+                    <x-responsive-nav-link :href="route('user.product.index')" :active="request()->routeIs('user.product.index')">
+                        {{ __('Produk') }}
+                    </x-responsive-nav-link>
 
                     @endif
         </div>
