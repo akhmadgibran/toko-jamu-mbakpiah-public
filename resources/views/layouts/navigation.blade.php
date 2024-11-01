@@ -44,6 +44,10 @@
                         {{ __('Produk') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('user.cart.index')" :active="request()->routeIs('user.cart.index')">
+                        {{ __('Keranjang') }}
+                    </x-nav-link>
+
                     @endif
 
                 </div>
@@ -126,6 +130,10 @@
                     {{-- * put your user links --}}
                     <x-responsive-nav-link :href="route('user.product.index')" :active="request()->routeIs('user.product.index')">
                         {{ __('Produk') }}
+                    </x-responsive-nav-link>
+
+                    <x-responsive-nav-link :href="route('user.cart.index')" :active="request()->routeIs('user.cart.index')">
+                        {{ __('Keranjang') }}
                     </x-responsive-nav-link>
 
                     @endif
