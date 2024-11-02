@@ -20,6 +20,7 @@
                             <table class="min-w-full bg-white border rounded-lg shadow-md">
                                 <thead>
                                     <tr class="bg-gray-100 border-b">
+                                        <th class="py-3 px-2 md:px-6 text-left">Foto</th>
                                         <th class="py-3 px-2 md:px-6 text-left">Product</th>
                                         <th class="py-3 px-2 md:px-6 text-left">Price</th>
                                         <th class="py-3 px-2 md:px-6 text-center">Quantity</th>
@@ -33,8 +34,12 @@
                                     <tr class="border-b">
                                         <!-- Product Info -->
                                         <td class="py-4 px-2 md:px-6 flex items-center space-x-2 md:space-x-4">
-                                            <img src="{{ asset('storage/' . $item->product->image_path) }}" alt="{{ $item->product->name }}" class="w-12 h-12 md:w-16 md:h-16 rounded">
-                                            <span class="text-sm md:text-base font-medium">{{ $item->product->name }}</span>
+                                            <img src="{{ asset('storage/' . $item->product->image_path) }}" alt="{{ $item->product->name }}" class=" min-w-[64px] min-h-[64px] w-12 h-12 md:w-16 md:h-16 rounded">
+                                        </td>
+
+
+                                        <td class="py-4 px-2 md:px-6 text-sm md:text-base">
+                                            <p class="text-sm md:text-base font-medium" >{{ $item->product->name }}</p>
                                         </td>
 
                                         <!-- Product Price -->

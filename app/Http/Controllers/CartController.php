@@ -10,15 +10,19 @@ class CartController extends Controller
 {
     //
 
+    // * Route index controller for index
+    // * 
     public function index()
     {
+        // * Get cart items for the current user
         $cartItems = Cart::where('user_id', Auth::user()->id)->get();
 
-        // Calculate the total price
+        // * Calculate the total price for the current user
         $totalPrice = $cartItems->sum(function ($item) {
             return $item->product->price * $item->quantity;
         });
 
+        // * Pass the cart items and total price to the view
         return view('user.cart.index', compact('cartItems', 'totalPrice'));
     }
 
@@ -68,22 +72,25 @@ class CartController extends Controller
     }
 
 
+    // * method update quantity at cart
     public function updateQuantity(Request $request, $id)
     {
-        // Validate the quantity input
+        //* Validate the quantity input
         $validatedData = $request->validate([
             'quantity' => 'required|numeric|min:1',
         ]);
 
-        // Find the cart item and update its quantity
+        //* Find the cart item and update its quantity
         $cartItem = Cart::findOrFail($id);
         $cartItem->quantity = $validatedData['quantity'];
         $cartItem->save();
 
-        // Redirect back to the cart page
+        //* Redirect back to the cart page
         return redirect()->route('user.cart.index')->with('success', 'Quantity updated successfully!');
     }
 
+    // * method delete cart item
+    // * menghapus item cart
     public function destroy($id)
     {
         // Find the cart item and delete it
