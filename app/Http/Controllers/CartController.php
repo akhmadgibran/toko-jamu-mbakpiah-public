@@ -49,7 +49,7 @@ class CartController extends Controller
         if ($cart) {
             $cart->quantity = $cart->quantity + $validatedData["quantity"];
             $cart->save();
-            return redirect()->route('user.cart.index')->with('success', 'Product added to cart successfully!');
+            return redirect()->route('user.cart.index')->with('success', 'Produk sudah ada, jumlah ditambahkan...');
         } else {
             // * Store data to database
             // * Menyimpan data ke database
@@ -68,7 +68,7 @@ class CartController extends Controller
 
         // ! redirect back
         // ! mengalihkan kembali
-        return redirect()->route('user.cart.index')->with('success', 'Product added to cart successfully!');
+        return redirect()->route('user.cart.index')->with('success', 'Produk Ditambahkan ke keranjang');
     }
 
 
@@ -86,7 +86,7 @@ class CartController extends Controller
         $cartItem->save();
 
         //* Redirect back to the cart page
-        return redirect()->route('user.cart.index')->with('success', 'Quantity updated successfully!');
+        return redirect()->route('user.cart.index')->with('success', 'Jumlah Produk diupdate');
     }
 
     // * method delete cart item
@@ -98,6 +98,6 @@ class CartController extends Controller
         $cartItem->delete();
 
         // Redirect back to the cart page
-        return redirect()->route('user.cart.index')->with('success', 'Product removed from cart successfully!');
+        return redirect()->route('user.cart.index')->with('success', 'Produk dihapus dari keranjang');
     }
 }

@@ -82,7 +82,7 @@ class ProductController extends Controller
         // return response()->json($product, 201);
         // ! redirect to admin.product.index
         // ! mengalihkan ke admin.product.index
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.product.index')->with('success', 'Produk ditambah');
     }
 
     // ! update() update product
@@ -125,7 +125,7 @@ class ProductController extends Controller
         // return response()->json($product);
         // ! redirect to admin.product.index
         // ! mengalihkan ke admin.product.index
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.product.index')->with('success', 'Produk selesai diupdate');
     }
 
     // ! destroy() delete product
@@ -149,6 +149,6 @@ class ProductController extends Controller
         // return response()->json(['message' => 'Product deleted']);
         // ! redirect to admin.product.index
         // ! mengalihkan ke admin.product.index
-        return redirect()->route('admin.product.index');
+        return redirect()->route('admin.product.index')->with('success', 'Produk dihapus');
     }
 }
