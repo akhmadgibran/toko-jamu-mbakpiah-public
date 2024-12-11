@@ -8,14 +8,13 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/rootbuild', function () {
-    return view('welcomeV2');
-});
+
 
 
 // Route::get('/dashboard', function () {
@@ -30,13 +29,24 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
+Route::get('/', function () {
+    return view('welcomeV2');
+})->name('home');
+
+// Route::get('/build', function () {
+//     return view('user.order.index');
+// });
+
+Route::get('product', [ProductController::class, 'index'])->name('product.index');
+Route::get('product/{id}', [ProductController::class, 'show'])->name('product.show');
+
 // ! Route untuk autentikasi user ber-usertype user (user route)
 Route::middleware(['auth', 'userMiddleware', 'verified'])->group(function () {
     Route::get('home', [UserController::class, "index"])->name("user.home");
 
-    Route::get('product', [ProductController::class, 'userIndex'])->name('user.product.index');
+    // Route::get('product', [ProductController::class, 'userIndex'])->name('user.product.index');
 
-    Route::get('product/{id}', [ProductController::class, 'show'])->name('user.product.show');
+    // Route::get('product/{id}', [ProductController::class, 'show'])->name('user.product.show');
 
     Route::get('cart', [CartController::class, 'index'])->name('user.cart.index');
 
@@ -45,6 +55,12 @@ Route::middleware(['auth', 'userMiddleware', 'verified'])->group(function () {
     Route::patch('/cart/{id}/quantity', [CartController::class, 'updateQuantity'])->name('cart.updateQuantity');
 
     Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('user.cart.destroy');
+
+    Route::get('checkout', [CheckoutController::class, 'index'])->name('user.checkout.index');
+
+    Route::post('checkout/payment', [CheckoutController::class, 'store'])->name('user.checkout.store');
+
+    // Route::get('checkout', [CartController::class, 'checkout'])->name('user.checkout');
 });
 
 // ! Route untuk autentikasi user ber-usertype admin (admin route)

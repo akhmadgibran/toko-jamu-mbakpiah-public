@@ -22,8 +22,13 @@ class CartController extends Controller
             return $item->product->price * $item->quantity;
         });
 
+        // // * calculate price per item
+        // $pricePerItem = $cartItems->map(function ($item) {
+        //     return $item->product->price * $item->quantity;
+        // });
+
         // * Pass the cart items and total price to the view
-        return view('user.cart.index', compact('cartItems', 'totalPrice'));
+        return view('user.cart.indexV2', compact('cartItems', 'totalPrice'));
     }
 
     // public function show()

@@ -40,7 +40,7 @@
                     @if (Auth::user()->usertype == 'user')
 
                     {{-- * put your user links --}}
-                    <x-nav-link :href="route('user.product.index')" :active="request()->routeIs('user.product.index')">
+                    <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.index')">
                         {{ __('Produk') }}
                     </x-nav-link>
 
@@ -128,7 +128,7 @@
                     @if (Auth::user()->usertype == 'user')
 
                     {{-- * put your user links --}}
-                    <x-responsive-nav-link :href="route('user.product.index')" :active="request()->routeIs('user.product.index')">
+                    <x-responsive-nav-link :href="route('product.index')" :active="request()->routeIs('product.index')">
                         {{ __('Produk') }}
                     </x-responsive-nav-link>
 
