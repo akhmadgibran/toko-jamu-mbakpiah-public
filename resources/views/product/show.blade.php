@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 ">
                     <div class="mt-3">
-                        <a href="{{ route('user.product.index') }}" class=" text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-white-600 dark:hover:bg-white-700 focus:outline-none dark:focus:ring-blue-800" >Kembali</a>
+                        <a href="{{ route('product.index') }}" class=" text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-white-600 dark:hover:bg-white-700 focus:outline-none dark:focus:ring-blue-800" >Kembali</a>
                     </div>
                 </div>
                 <div class="p-6 text-gray-900">

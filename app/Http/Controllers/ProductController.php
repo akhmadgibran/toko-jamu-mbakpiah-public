@@ -19,13 +19,13 @@ class ProductController extends Controller
     }
 
     //! index() retrives all products (mengambil semua product lewat model Product) untuk User
-    public function userIndex()
+    public function index()
     {
         // * retrive all products
-        $data =  Product::all();
+        $data =  Product::paginate(8);
         // * passing data to view as "products"
         // * mengirimkan data ke view sebagai "products"
-        return view('user.product.index', ['products' => $data]);
+        return view('product.indexV2', ['products' => $data]);
     }
 
     // ! show() show product or return product data by id
@@ -33,7 +33,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $data = Product::findOrFail($id);
-        return view('user.product.show', ['product' => $data]);
+        return view('product.showV2', ['product' => $data]);
     }
 
     // ! create() create new product (form input)

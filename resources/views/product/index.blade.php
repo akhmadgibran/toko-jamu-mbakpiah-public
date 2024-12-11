@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900">
                     <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"">
                         @foreach ($products as $product )
-                         <a href="{{ route('user.product.show', $product->id) }}" class="block max-w-xs bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105">
+                         <a href="{{ route('product.show', $product->id) }}" class="block max-w-xs bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105">
                             <!-- resources/views/components/product-card.blade.php -->
                             <div class="max-w-xs bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105">
                                 <!-- Product Image -->
