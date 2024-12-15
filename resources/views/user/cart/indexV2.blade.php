@@ -5,8 +5,8 @@
         <div class="mt-[80px] flex flex-col " >
             {{-- * Section title --}}
             <div class="" >
-                <div class="px-5 py-2" >
-                    <div class="text-black text-[28px] font-extrabold" >
+                <div class="px-5 py-2 " >
+                    <div class="text-black text-[28px] font-extrabold bg-white rounded-md shadow-lg p-2" >
                         Keranjangmu
                     </div>
                 </div>
@@ -88,13 +88,26 @@
                                 </div>
                             </div>
                             {{-- * row button order --}}
-                            <div class="p-2" >
-                                <a href="{{ route('user.checkout.index') }}">
-                                    <div class=" md:block px-5 py-2 md:px-7 md:py-3 lg:px-10 lg:py-4 rounded-md bg-white hover:bg-slate-100  text-[#FFCC00] hover:text-black  font-semibold hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center " >
-                                        Order Sekarang
-                                    </div>
-                                </a>
-                            </div>
+                            @if ( $cartItems->count() > 0 ) 
+                                <div class="p-2" >
+                                    <a href="{{ route('user.checkout.index') }}">
+                                        <div class=" md:block px-5 py-2 md:px-7 md:py-3 lg:px-10 lg:py-4 rounded-md bg-white hover:bg-slate-100  text-[#FFCC00] hover:text-black  font-semibold hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center " >
+                                            Order Sekarang
+                                        </div>
+                                    </a>
+                                </div>
+                            
+
+                            @else 
+                                <div class="p-2" >
+                                    <a  href="{{ route('product.index') }}">
+                                        <div class=" md:block px-5 py-2 md:px-7 md:py-3 lg:px-10 lg:py-4 rounded-md bg-white hover:bg-slate-100  text-[#FFCC00] hover:text-black  font-semibold hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center " >
+                                            Keranjang Kosong
+                                        </div>
+                                    </a>
+                                </div>
+                            
+                            @endif
                         </div>
                     </div>
                 </div>

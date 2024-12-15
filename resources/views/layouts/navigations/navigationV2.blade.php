@@ -23,6 +23,10 @@
                                         <a class="hover:text-gray-500 font-semibold lg:text-white" href="">Contact</a>
                                     </li>
 
+                                    <li class="lg:hidden" >
+                                        <a class="hover:text-gray-500 font-semibold lg:text-white lg:hidden" href="{{ route('user.order.index') }}">Your Order</a>
+                                    </li>
+
                                     {{-- * Button Account Mobile --}}
                                     <a class="lg:hidden" href="{{ route('profile.edit') }}">
                                         <div class="lg:hidden bg-[#FFCC00] px-5 py-2 rounded-md hover:bg-[#E9CF67] font-semibold" >
@@ -49,8 +53,11 @@
                                 <a href="{{ route('user.cart.index') }}">
                                     <img class="h-[40px] w-[40px]  " src="{{ asset('images/icons/mage_basket.png') }}" alt="">
                                 </a>
-                                <a href="{{ route('profile.edit') }}">
-                                    <div class="hidden lg:block" >
+                                <a class="hidden lg:block" href="{{ route('user.order.index') }}">
+                                    <img class="h-[40px] w-[40px]  " src="{{ asset('images/icons/icon-park-solid_transaction.png') }}" alt="">
+                                </a>
+                                <a class="hidden lg:block" href="{{ route('profile.edit') }}">
+                                    <div class="" >
                                         <img class="h-[40px] w-[40px]" src="{{ asset('images/icons/codicon_account.png') }} " alt="">
                                     </div>
                                 </a>

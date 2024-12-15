@@ -3,10 +3,10 @@
 @section('content')
 <section class="w-full min-h-screen mb-[80px]" >
     {{-- * Page title --}}
-    <div class="" >
+    <div class="my-2 bg-white shadow-lg p-2" >
         {{-- * Section title --}}
         <div class="" >
-            <div class="px-5 py-2 lg:py-10 lg:px-10" >
+            <div class="px-5 py-2 lg:py-10 lg:px-10 " >
                 <div class="text-black text-[28px] font-extrabold" >
                     Buat Order
                 </div>
@@ -43,8 +43,8 @@
                                         <form action="{{ route('cart.updateQuantity', $item->id) }}" method="POST">
                                             @csrf
                                             @method('PATCH')
-                                            <input type="hidden" name="quantity" value="{{ $item->quantity - 1 }}">
-                                            <button type="submit" class="bg-[#FFCC00] px-2 py-1 rounded hover:bg-opacity-20" {{ $item->quantity <= 1 ? 'disabled' : '' }}  >-</button>
+                                                <input type="hidden" name="quantity" value="{{ $item->quantity - 1 }}">
+                                                <button type="submit" class="bg-[#FFCC00] px-2 py-1 rounded hover:bg-opacity-20" {{ $item->quantity <= 1 ? 'disabled' : '' }}  >-</button>
                                         </form>
     
                                         <!-- Quantity Display -->
@@ -96,6 +96,7 @@
                         <div class="" >
                             <p class="font-semibold text-black text-sm lg:text-[16px]" >Alamat Pengiriman :</p>
                             <p class=" text-black lg:text-[32px]" >{{ auth()->user()->address }}</p>
+                            <p class="font-semibold text-white text-xs lg:text-sm" >* Ubah alamatmu di menu profile</p>
                             <p class="font-semibold text-red-500 text-xs lg:text-sm" >* Alamat pengiriman order tidak bisa diubah setelah melakukan order</p>
                         </div>
 
@@ -144,7 +145,19 @@
                     </div>
 
 
-                    {{-- * row button order --}}
+                    @if ( Auth::user()->phone == null || Auth::user()->address == null )
+                                            {{-- * row button order --}}
+                    <div class="p-2" >
+                        {{-- <a href="{{ route('product.index') }}">
+                            <div class=" md:block px-5 py-2 md:px-7 md:py-3 lg:px-10 lg:py-4 rounded-md bg-white hover:bg-slate-100  text-[#FFCC00] hover:text-black  font-semibold hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center " >
+                                Order
+                        </a> --}}
+
+                            <div class="w-full px-5 py-2 md:px-7 md:py-3 lg:px-10 lg:py-4 rounded-md bg-white hover:bg-slate-100  text-[#FFCC00] hover:text-black font-semibold  hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center">
+                                Ada Data Yang Belum Diisi
+                            </div>
+                    @else
+                                            {{-- * row button order --}}
                     <div class="p-2" >
                         {{-- <a href="{{ route('product.index') }}">
                             <div class=" md:block px-5 py-2 md:px-7 md:py-3 lg:px-10 lg:py-4 rounded-md bg-white hover:bg-slate-100  text-[#FFCC00] hover:text-black  font-semibold hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center " >
@@ -154,6 +167,7 @@
                             <button type="submit" class="w-full px-5 py-2 md:px-7 md:py-3 lg:px-10 lg:py-4 rounded-md bg-white hover:bg-slate-100  text-[#FFCC00] hover:text-black font-semibold  hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center">
                                 Order
                             </button>
+                    @endif
                 
                     </div>
             </form>

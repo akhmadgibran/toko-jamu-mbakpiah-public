@@ -30,9 +30,9 @@
                             {{ __('Produk') }}
                         </x-nav-link>
                         
-                        {{-- <x-nav-link :href="route('admin.orders.index')" :active="request()->routeIs('admin.order.index')">
+                        <x-nav-link :href="route('admin.order.index')" :active="request()->routeIs('admin.order.index')">
                             {{ __('Orders') }}
-                        </x-nav-link> --}}
+                        </x-nav-link>
                     @endif
 
                     {{-- ! User Links --}}
