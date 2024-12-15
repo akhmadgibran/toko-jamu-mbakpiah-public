@@ -10,12 +10,12 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
 
-                    {{-- <!-- Export to PDF Button -->
+                    <!-- Export to PDF Button -->
                     <div class="mb-6">
-                        <a href="{{ route('reports.exportPDF') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        <a href="{{ route('reports.exportPDF') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700" target="_blank">
                             Export to PDF
                         </a>
-                    </div> --}}
+                    </div>
 
                     <!-- Total Sales -->
                     <div class="mb-6">

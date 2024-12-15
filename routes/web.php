@@ -109,6 +109,8 @@ Route::middleware(['auth', 'adminMiddleware'])->group(function () {
         Route::post('admin/order/{id}', [OrderController::class, 'adminUpdateOrder'])->name('admin.order.update');
 
         Route::get('/admin/reports', [ReportController::class, 'index'])->name('admin.reports.index');
+
+        Route::get('reports/export-pdf', [ReportController::class, 'exportPDF'])->name('reports.exportPDF');
     });
     // // * Route for products method adminIndex()
     // Route::get('admin/product', [ProductController::class, "adminIndex"])->name("admin.product.index");

@@ -46,4 +46,32 @@ class ReportController extends Controller
     /**
      * Export the report as a PDF.
      */
+    public function exportPDF()
+    {
+        // Total Sales in the last 30 days
+        $totalSales = Order::where('status', 'Selesai') // Only completed orders
+            ->where('created_at', '>=', Carbon::now()->subDays(30))
+            ->sum('total_price'); // Sum of the total_price column
+
+        // Sales by Product in the last 30 days
+        $salesByProduct = OrderDetail::join('products', 'order_details.product_id', '=', 'products.id')
+            ->whereHas('order', function ($query) {
+                $query->where('status', 'Selesai'); // Only include completed orders
+            })
+            ->where('order_details.created_at', '>=', Carbon::now()->subDays(30)) // Filter by date range (last 30 days)
+            ->selectRaw('order_details.product_id, SUM(order_details.quantity) as total_quantity, SUM(order_details.quantity * products.price) as total_sales')
+            ->groupBy('order_details.product_id')
+            ->get();
+
+        // Orders by Status
+        $ordersByStatus = Order::selectRaw('status, COUNT(*) as total_orders')
+            ->groupBy('status')
+            ->get();
+
+        // List of all orders with their details
+        $allOrders = Order::with('orderDetails.product')->get();
+
+        // Returning the data to the view
+        return view('admin.reports.pdf', compact('totalSales', 'salesByProduct', 'ordersByStatus', 'allOrders'));
+    }
 }
