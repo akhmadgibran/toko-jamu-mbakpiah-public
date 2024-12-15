@@ -18,12 +18,13 @@ class EmailVerificationNotificationController extends Controller
             if ($request->user()->usertype == "admin") {
                 return redirect()->intended(route('admin.dashboard', absolute: false));
             } else {
-                return redirect()->intended(route('user.home', absolute: false));
+                return redirect()->intended(route('home', absolute: false));
             }
         }
 
+        else {
         $request->user()->sendEmailVerificationNotification();
 
-        return back()->with('status', 'verification-link-sent');
+        return back()->with('status', 'verification-link-sent');}
     }
 }

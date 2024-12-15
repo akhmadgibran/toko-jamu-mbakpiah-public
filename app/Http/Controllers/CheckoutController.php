@@ -67,6 +67,6 @@ class CheckoutController extends Controller
         Cart::where('user_id', Auth::user()->id)->delete();
 
         // * step 6: redirect ke halaman order
-        return redirect()->route('product.index');
+        return redirect()->route('user.order.index');
     }
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrderController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -34,8 +35,10 @@ Route::get('/', function () {
 })->name('home');
 
 // Route::get('/build', function () {
-//     return view('user.order.index');
+//     return view('admin.order.show');
 // });
+
+
 
 Route::get('product', [ProductController::class, 'index'])->name('product.index');
 Route::get('product/{id}', [ProductController::class, 'show'])->name('product.show');
@@ -61,6 +64,12 @@ Route::middleware(['auth', 'userMiddleware', 'verified'])->group(function () {
     Route::post('checkout/payment', [CheckoutController::class, 'store'])->name('user.checkout.store');
 
     // Route::get('checkout', [CartController::class, 'checkout'])->name('user.checkout');
+
+    Route::get('order', [OrderController::class, 'indexUser'])->name('user.order.index');
+
+    Route::post('order', [OrderController::class, 'userOrderFiltered'])->name('user.order.filtered');
+
+    Route::get('order/{id}', [OrderController::class, 'userShowOrder'])->name('user.order.show');
 });
 
 // ! Route untuk autentikasi user ber-usertype admin (admin route)
@@ -86,6 +95,17 @@ Route::middleware(['auth', 'adminMiddleware'])->group(function () {
 
         // * Route for destroy method destroy()
         Route::delete('admin/product/{id}',  "destroy")->name("admin.product.destroy");
+    });
+
+    Route::controller(OrderController::class)->group(function () {
+
+        Route::get('/admin/order', [OrderController::class, 'indexAdmin'])->name('admin.order.index');
+
+        Route::post('admin/order', [OrderController::class, 'adminOrderFiltered'])->name('admin.order.filtered');
+
+        Route::get('admin/order/{id}', [OrderController::class, 'adminShowOrder'])->name('admin.order.show');
+
+        Route::post('admin/order/{id}', [OrderController::class, 'adminUpdateOrder'])->name('admin.order.update');
     });
     // // * Route for products method adminIndex()
     // Route::get('admin/product', [ProductController::class, "adminIndex"])->name("admin.product.index");
