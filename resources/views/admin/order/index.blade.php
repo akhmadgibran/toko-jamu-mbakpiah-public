@@ -67,6 +67,10 @@
                                     <p class="text-center text-black text-[24px] font-bold" >Tidak ada orderan sesuai filter tersebut</p>
                                     
                                 @else
+                                <div class="" >
+                                    {{ $adminOrderItems->links() }}
+                                </div>
+        
                                     @foreach ($adminOrderItems as $item)
                                         {{-- * content wrapper per items --}}
                                         <div class="min-w-[400px] mt-2 flex flex-row justify-between shadow-lg rounded-md  bg-white p-5 max-w-[500px]  " >

@@ -10,6 +10,7 @@
                         <div class="text-black text-[28px] font-extrabold" >
                             Orderan Saya
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -67,13 +68,19 @@
                     </form>
                 </div>
 
+                
                 {{-- * content based on filter --}}
                 <div class="p-5 flex flex-col justify-center" >
                     <div class="p-5 max-w-full mx-auto  overflow-x-scroll " >
+
                         @if ($userOrderItems->isEmpty())
                             <p class="text-center text-black text-[24px] font-bold" >Tidak ada orderan sesuai filter tersebut</p>
                             
                         @else
+                        <div class="" >
+                            {{ $userOrderItems->links() }}
+                        </div>
+
                             @foreach ($userOrderItems as $item)
                                 {{-- * content wrapper per items --}}
                                 <div class="min-w-[400px] mt-2 flex flex-row justify-between shadow-lg rounded-md  bg-white p-5 max-w-[500px]  " >

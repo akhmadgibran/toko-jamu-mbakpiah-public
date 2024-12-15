@@ -54,7 +54,7 @@
                         </form>
                         @else
                         <a href="{{ route('login') }}" class="w-full mt-4 bg-[#FFCC00] hover:text-black text-white font-semibold py-2 rounded-lg text-center block hover:bg-opacity-20  transition">
-                            Login 
+                            Tambah ke Keranjang
                         </a>
                         @endif
                     </div>
