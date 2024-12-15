@@ -33,6 +33,10 @@
                         <x-nav-link :href="route('admin.order.index')" :active="request()->routeIs('admin.order.index')">
                             {{ __('Orders') }}
                         </x-nav-link>
+
+                        <x-nav-link :href="route('admin.reports.index')" :active="request()->routeIs('admin.reports.index')">
+                            {{ __('Laporan') }}
+                        </x-nav-link>
                     @endif
 
                     {{-- ! User Links --}}

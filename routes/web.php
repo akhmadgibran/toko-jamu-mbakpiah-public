@@ -1,15 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+
+
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ProductController;
-
-
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\OrderController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -106,6 +107,8 @@ Route::middleware(['auth', 'adminMiddleware'])->group(function () {
         Route::get('admin/order/{id}', [OrderController::class, 'adminShowOrder'])->name('admin.order.show');
 
         Route::post('admin/order/{id}', [OrderController::class, 'adminUpdateOrder'])->name('admin.order.update');
+
+        Route::get('/admin/reports', [ReportController::class, 'index'])->name('admin.reports.index');
     });
     // // * Route for products method adminIndex()
     // Route::get('admin/product', [ProductController::class, "adminIndex"])->name("admin.product.index");

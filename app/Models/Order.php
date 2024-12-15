@@ -14,4 +14,11 @@ class Order extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    // Relationship: An order can have many order details
+    // Relationship: An order can have many order details
+    public function orderDetails()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
 }
