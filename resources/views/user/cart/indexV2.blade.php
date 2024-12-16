@@ -1,19 +1,22 @@
 @extends('layouts.master-shopper')
 
 @section('content')
-    <section class="w-full min-h-screen flex justify-center  " >
-        <div class="mt-[80px] flex flex-col " >
-            {{-- * Section title --}}
-            <div class="" >
-                <div class="px-5 py-2 " >
-                    <div class="text-black text-[28px] font-extrabold bg-white rounded-md shadow-lg p-2" >
-                        Keranjangmu
+    <section class="w-full min-h-screen  " >
+            {{-- * Page title --}}
+            <div class="my-2 bg-white shadow-lg p-2" >
+                {{-- * Section title --}}
+                <div class="" >
+                    <div class="px-5 py-2 lg:py-10 lg:px-10 " >
+                        <div class="text-black text-[28px] font-extrabold" >
+                            Keranjang Saya
+                        </div>
+
                     </div>
                 </div>
             </div>
 
             {{-- * content wrapper --}}
-            <div class=" max-w-5xl" >
+            <div class=" max-w-5xl mx-auto" >
                 <div class="flex flex-col " >
                     <div class="p-5 max-w-full  overflow-x-scroll " >
                         @foreach ($cartItems as $item)

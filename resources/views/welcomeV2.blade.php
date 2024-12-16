@@ -20,7 +20,7 @@
                     </div>
                     {{-- * button --}}
                     <div class="pt-5 flex flex-row gap-2" >
-                        <a href="{{ route('login') }}">
+                        <a href="/about">
                             <div class="md:block px-5 py-2 md:px-7 md:py-3 lg:px-10 lg:py-4 rounded-md bg-[#FFCC00] hover:bg-opacity-20 text-white hover:text-black  font-semibold hover:shadow-xl transform hover:-translate-y-2 transition duration-300 " >
                                 Tentang Kami
                             </div>

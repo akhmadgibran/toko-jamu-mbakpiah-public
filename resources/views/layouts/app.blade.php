@@ -16,7 +16,11 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
+            @if (Auth::user()->usertype == 'admin')
             @include('layouts.navigation')
+            @else
+                @include('layouts.navigations.navigationV2')
+            @endif
             @include('layouts.flash-message')
 
 
@@ -36,6 +40,10 @@
             <main>
                 {{ $slot }}
             </main>
+
+            @if (Auth::user()->usertype == 'user')
+                @include('layouts.footer-shopper')
+            @endif
         </div>
     </body>
 </html>

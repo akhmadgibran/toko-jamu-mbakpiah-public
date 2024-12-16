@@ -2,8 +2,8 @@
 
 @section('content')
 {{-- * Section Hero --}}
-<section class="w-full">
-    <div class=" bg-no-repeat min-h-[475px] flex items-center justify-center" style="
+<section class="w-full p-5 bg-white">
+    <div class="mx-auto max-w-[1310px] rounded-md bg-no-repeat min-h-[475px] flex items-center justify-center" style="
     background-image: url('/images/backgrounds/herbal-drink-475.png'); 
     background-size: cover;
     background-position: 0% 70%;
@@ -15,7 +15,7 @@
 </section>
 
 {{-- * Section Products --}}
-<section id="products" class="w-full mt-[80px] min-h-screen">
+<section id="products" class="w-full  min-h-screen bg-white p-5">
     {{-- * Content Products --}}
     <div class="container mx-auto ">
         <div class="xl:mx-[150px]" >

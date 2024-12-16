@@ -6,9 +6,9 @@
                 <!--  Logo -->
                 <div class="shrink-0 flex items-center">
                     {{-- <a href="{{ route('dashboard') }}"> --}}
-                    <a href="{{ Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('user.home') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
+                        <a href="{{ route('admin.dashboard') }}" class="flex justify-center" >
+                            <img class="h-[40px] w-[190px] mx-auto transform hover:-translate-y-2 transition duration-300 " src="/images/logoOri.png" alt="">
+                        </a>
                 </div>
 
                 <!-- Navigation Links -->

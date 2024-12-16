@@ -14,14 +14,12 @@
                                         <a class="hover:text-gray-500 font-semibold lg:text-white"  href="/">Home</a>
                                     </li>
                                     <li>
-                                        <a class="hover:text-gray-500 font-semibold lg:text-white" href="">Tentang</a>
+                                        <a class="hover:text-gray-500 font-semibold lg:text-white" href="/about">Tentang</a>
                                     </li>
                                     <li>
                                         <a class="hover:text-gray-500 font-semibold lg:text-white" href="{{ route('product.index') }}">Products</a>
                                     </li>
-                                    <li>
-                                        <a class="hover:text-gray-500 font-semibold lg:text-white" href="">Contact</a>
-                                    </li>
+ 
 
                                     <li class="lg:hidden" >
                                         <a class="hover:text-gray-500 font-semibold lg:text-white lg:hidden" href="{{ route('user.order.index') }}">Your Order</a>
@@ -95,14 +93,12 @@
                                     <a class="hover:text-gray-500 font-semibold lg:text-white"  href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a class="hover:text-gray-500 font-semibold lg:text-white" href="">Tentang</a>
+                                    <a class="hover:text-gray-500 font-semibold lg:text-white" href="/about">Tentang</a>
                                 </li>
                                 <li>
                                     <a class="hover:text-gray-500 font-semibold lg:text-white" href="{{ route('product.index') }}">Products</a>
                                 </li>
-                                <li>
-                                    <a class="hover:text-gray-500 font-semibold lg:text-white" href="">Contact</a>
-                                </li>
+
                                 <a class="lg:hidden" href="{{ route('login') }}">
                                     <div class="lg:hidden bg-[#FFCC00] px-5 py-2 rounded-md hover:bg-[#E9CF67] font-semibold text-center" >
                                         Login

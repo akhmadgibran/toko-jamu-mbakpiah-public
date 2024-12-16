@@ -35,9 +35,9 @@ Route::get('/', function () {
     return view('welcomeV2');
 })->name('home');
 
-// Route::get('/build', function () {
-//     return view('admin.order.show');
-// });
+Route::get('/about', function () {
+    return view('about');
+});
 
 
 
