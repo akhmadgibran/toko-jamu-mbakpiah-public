@@ -12,7 +12,7 @@ class ProductController extends Controller
     public function adminIndex()
     {
         // * retrive all products
-        $data =  Product::all();
+        $data =  Product::paginate(5);
         // * passing data to view as "products"
         // * mengirimkan data ke view sebagai "products"
         return view('admin.product.index', ['products' => $data]);

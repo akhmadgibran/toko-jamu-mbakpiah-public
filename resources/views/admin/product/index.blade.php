@@ -17,6 +17,9 @@
                 </div>
                 
                 <div class="p-6">
+                    <div class="p-5">
+                        {{ $products->links() }}
+                    </div>
 
                     <!-- resources/views/components/product-table.blade.php -->
                     <div class="overflow-x-auto">
