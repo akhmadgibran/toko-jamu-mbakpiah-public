@@ -10,7 +10,7 @@
 Website Toko Jamu Mbak Piah merupakan website implementasi solusi terhadap masalah Toko Jamu Mbak piah yang masih mempunyai sistem penjualan  konvensional, yaitu dengan menuju  ke toko terlebih dahulu untuk memesan produk jamunya. Guna mempermudah proses pemesanan jamu Toko Mbak Piah maka dibuatlah sebuah website E-Commerce sederhana ini untuk mengatasi permasalahan yang ada tersebut.
 <br>
 <br>
-Manual Book Link : <a href="https://drive.google.com/file/d/1pFLLNNopWIr-NuqiBwLQWaS3E5FZBKTT/view?usp=drive_link" target="_blank">Link</a>
+Manual Book Link [ID ver] : <a href="https://drive.google.com/file/d/1pFLLNNopWIr-NuqiBwLQWaS3E5FZBKTT/view?usp=drive_link" target="_blank">Link</a>
 
 ## Project Tech Stacks 
 <div align="center">
