@@ -25,6 +25,8 @@ Manual Book Link : <a href="https://drive.google.com/file/d/1pFLLNNopWIr-NuqiBwL
 **Run below after clone :**
 ```
 composer Install
+```
+```
 npm install
 ```
 
@@ -32,6 +34,12 @@ npm install
 1. Place images folder in backup-need to storage/app/public
 2. place database.sqlite in backup-need to database
 3. make .env and copy & edit .env-example into it
+
+**To run project locally, make sure to run the tailwind css :**
+```
+npm run dev
+```
+
 
 <br>
 <br>
