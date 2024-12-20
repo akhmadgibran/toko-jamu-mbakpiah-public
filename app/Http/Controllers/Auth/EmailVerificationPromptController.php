@@ -24,7 +24,7 @@ class EmailVerificationPromptController extends Controller
     {
         if ($request->user()->hasVerifiedEmail()) {
             if ($request->user()->usertype == "admin") {
-                return redirect()->intended(route('admin.dashboard', absolute: false));
+                return redirect()->intended(route('admin.reports.index', absolute: false));
             } else {
                 return redirect()->intended(route('home', absolute: false));
             }

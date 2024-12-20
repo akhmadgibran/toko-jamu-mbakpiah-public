@@ -4,7 +4,9 @@
                 <div class="container mx-auto" >
                     <nav class="flex justify-between items-center p-5" >
                         <div class="flex flex-row items-center" >
-                            <img class="h-[40px] w-[190px]" src="/images/logoOri.png" alt="">
+                            <a href="/">
+                                <img class="h-[40px] w-[190px]" src="/images/logoOri.png" alt="">
+                            </a>
                             {{-- <p class="text-[24px] text-[#FFCC00] font-bold">Jamu Mbak Piah</p> --}}
                         </div>
                         <div id="nav-links" class="duration-500 lg:static absolute min-h-[60vh] lg:min-h-fit left-0 top-[-1000%] w-full lg:w-auto flex items-center px-5 bg-white lg:bg-transparent" >
@@ -83,7 +85,9 @@
             <div class="container mx-auto" >
                 <nav class="flex justify-between items-center p-5" >
                     <div class="flex flex-row items-center" >
-                        <img class="h-[40px] w-[190px]" src="/images/logoOri.png" alt="">
+                        <a href="/">
+                            <img class="h-[40px] w-[190px]" src="/images/logoOri.png" alt="">
+                        </a>
                         {{-- <p class="text-[24px] text-[#FFCC00] font-bold">Jamu Mbak Piah</p> --}}
                     </div>
                     <div id="nav-links" class="duration-500 lg:static absolute min-h-[60vh] lg:min-h-fit left-0 top-[-1000%] w-full lg:w-auto flex items-center px-5 bg-white lg:bg-transparent" >

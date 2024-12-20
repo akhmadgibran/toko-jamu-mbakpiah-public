@@ -16,7 +16,7 @@ class VerifyEmailController extends Controller
     {
         if ($request->user()->hasVerifiedEmail()) {
             if ($request->user()->usertype == "admin") {
-                return redirect()->intended(route('admin.dashboard', absolute: false) . '?verified=1');
+                return redirect()->intended(route('admin.reports.index', absolute: false) . '?verified=1');
             } else {
                 return redirect()->intended(route('home', absolute: false) . '?verified=1');
             }
@@ -29,7 +29,7 @@ class VerifyEmailController extends Controller
         // return redirect()->intended(route('dashboard', absolute: false) . '?verified=1');
         // return redirect()->intended(route('user.home', absolute: false) . '?verified=1');
         if ($request->user()->usertype == "admin") {
-            return redirect()->intended(route('admin.dashboard', absolute: false) . '?verified=1');
+            return redirect()->intended(route('admin.reports.index', absolute: false) . '?verified=1');
         } else {
             return redirect()->intended(route('home', absolute: false) . '?verified=1');
         }

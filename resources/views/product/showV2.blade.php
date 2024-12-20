@@ -63,7 +63,7 @@
                     @else
                     <a href="{{ route('login') }}">
                         <div class="md:block  px-5 py-2 md:px-7 md:py-3  lg:px-10 lg:py-4 bg-[#FFCC00] hover:bg-opacity-20 text-white hover:text-black rounded-md  font-semibold hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center " >
-                            login
+                            Tambah Ke Keranjang
                         </div>
                     </a>
                     @endif

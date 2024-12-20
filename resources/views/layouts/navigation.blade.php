@@ -6,7 +6,7 @@
                 <!--  Logo -->
                 <div class="shrink-0 flex items-center">
                     {{-- <a href="{{ route('dashboard') }}"> --}}
-                        <a href="{{ route('admin.dashboard') }}" class="flex justify-center" >
+                        <a href="{{ route('admin.reports.index') }}" class="flex justify-center" >
                             <img class="h-[40px] w-[190px] mx-auto transform hover:-translate-y-2 transition duration-300 " src="/images/logoOri.png" alt="">
                         </a>
                 </div>
@@ -14,14 +14,14 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')"> --}}
-                    <x-nav-link :href="Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('user.home')" :active="Auth::user()->usertype == 'admin' ? request()->routeIs('admin.dashboard') : request()->routeIs('user.home')">
+                    {{-- <x-nav-link :href="Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('user.home')" :active="Auth::user()->usertype == 'admin' ? request()->routeIs('admin.dashboard') : request()->routeIs('user.home')">
                         
                         @if (Auth::user()->usertype == 'admin')
                             {{ __('Dashboard') }}
                         @else
                             {{ __('Home') }}
                         @endif
-                    </x-nav-link>
+                    </x-nav-link> --}}
 
                     {{-- ! Admin Links --}}
 
@@ -109,13 +109,13 @@
             {{-- <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link> --}}
-            <x-responsive-nav-link :href="Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('user.home')" :active="Auth::user()->usertype == 'admin' ? request()->routeIs('admin.dashboard') : request()->routeIs('user.home')">
+            {{-- <x-responsive-nav-link :href="Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('user.home')" :active="Auth::user()->usertype == 'admin' ? request()->routeIs('admin.dashboard') : request()->routeIs('user.home')">
                 @if (Auth::user()->usertype == 'admin')
                 {{ __('Dashboard') }}
                 @else
                     {{ __('Home') }}
                 @endif
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
 
                     {{-- ! Admin Links --}}
 
@@ -123,7 +123,12 @@
                         <x-responsive-nav-link :href="route('admin.product.index')" :active="request()->routeIs('admin.product.index')">
                             {{ __('Produk') }}
                         </x-responsive-nav-link>
-                        
+                        <x-responsive-nav-link :href="route('admin.order.index')" :active="request()->routeIs('admin.order.index')">
+                            {{ __('Orders') }}
+                        </x-responsive-nav-link>
+                        <x-responsive-nav-link :href="route('admin.reports.index')" :active="request()->routeIs('admin.reports.index')">
+                            {{ __('Laporan') }}
+                        </x-responsive-nav-link>
 
                     @endif
 
