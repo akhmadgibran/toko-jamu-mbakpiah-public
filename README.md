@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="backup-need/images/logoOri.png" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://github.com/earlwyl/toko-jamu-mbakpiah-public" target="_blank"><img src="backup-need/images/logoOri.png" width="400" alt="Laravel Logo"></a></p>
 
 <br>
 <br>
@@ -9,7 +9,7 @@
 
 Website Toko Jamu Mbak Piah merupakan website implementasi solusi terhadap masalah Toko Jamu Mbak piah yang masih mempunyai sistem penjualan  konvensional, yaitu dengan menuju  ke toko terlebih dahulu untuk memesan produk jamunya. Guna mempermudah proses pemesanan jamu Toko Mbak Piah maka dibuatlah sebuah website E-Commerce sederhana ini untuk mengatasi permasalahan yang ada tersebut.
 
-## Built From
+## Project Tech Stacks 
 <div align="center">
     <img src="https://skillicons.dev/icons?i=html,css,javascript,php" /><br>
     <img src="https://skillicons.dev/icons?i=tailwind,laravel" /><br>
