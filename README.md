@@ -44,7 +44,7 @@ npm run dev
 <br>
 <br>
 
-<p align="center"  >This project is finished but there are still many room for development</p>
+<p align="center"  >This project is finished for exam submission but there are still many room for development</p>
 
 
 
